@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Calculator</title>
+    <link rel="stylesheet" href="./stylesheet/style.css">
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button class="theme-toggle-btn" id="themeToggle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+            </svg>
+            Toggle Theme
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator-header">
+                <h1>Expense Calculator</h1>
+            </div>
+            <form id="expenseForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task">Task Description</label>
+                        <input type="text" id="task" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status" required>
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="owner">Owner</label>
+                        <input type="text" id="owner" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" id="quantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="perPrice">Per Price</label>
+                        <input type="number" id="perPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <select id="currency" required>
+                            <option value="₨">Pakistani Rupees (PKR)</option>
+                            <option value="$">US Dollar ($)</option>
+                            <option value="₹">Indian Rupee (₹)</option>
+                            <option value="€">Euro (€)</option>
+                            <option value="£">British Pound (£)</option>
+                            <option value="¥">Japanese Yen (¥)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="price">Total Price</label>
+                        <input type="number" id="price" readonly>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Add Entry
+                    </button>
+                    <button type="button" class="btn-secondary" id="clearForm">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Clear Form
+                    </button>
+                </div>
+                <div class="total">
+                    Total: <span id="currencySymbol">₨ </span><span id="grandTotal">0</span>
+                </div>
+            </form>
+        </div>
+
+        <div class="history">
+            <div class="history-header">
+                <h2>Recent Entries</h2>
+                <button type="button" class="btn-danger" id="clearHistory">Clear All History</button>
+            </div>
+            <div class="history-grid" id="historyList"></div>
+        </div>
+    </div>
+
+  <script src="./script/script.js"></script>
+</body>
+</html>
